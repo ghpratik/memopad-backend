@@ -1,15 +1,24 @@
 import React from 'react'
 import { Link, useLocation } from  "react-router-dom";
 import { useNavigate } from 'react-router-dom';
-
+import { useContext } from 'react';
+import noteContext from '../context/notes/noteContext';
+import * as bootstrap from 'bootstrap/dist/js/bootstrap';
 
 const Navbar = () => {
+    const context = useContext(noteContext);
+    const { userData } = context;
     let location = useLocation();
     let navigate = useNavigate();
     const handleLogout = ()=>{
         localStorage.removeItem('token')
         navigate("/login");
     }
+
+    //POPOVER
+    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+    const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
+
     return (
         <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
             <div className="container-fluid">
@@ -30,7 +39,7 @@ const Navbar = () => {
                     <form className="d-flex" role="search">
                         <Link className="btn btn-primary mx-1" to="/login" role="button">Login</Link>
                         <Link className="btn btn-primary mx-1" to="/signup" role="button">SignUp</Link>
-                    </form>: <button onClick={handleLogout} className="btn btn-primary">Logout</button>}
+                    </form>: <div><button type="button" className="btn btn-success" data-bs-toggle="popover" data-bs-title={userData.name} data-bs-content={userData.email}>Hello, {userData.name}</button><button onClick={handleLogout} className="btn btn-primary ms-4">Logout</button></div>}
                 </div>
             </div>
         </nav>

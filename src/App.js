@@ -12,7 +12,7 @@ import NoteState from './context/notes/NoteState';
 import Alert from './components/Alert';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
-
+import 'bootstrap/dist/css/bootstrap.css';
 function App() {
   const [alert, setAlert] = useState(null);
   const showAlert = (message, type) => {
