@@ -15,7 +15,7 @@ const NoteState = (props) => {
             method: "GET", // *GET, POST, PUT, DELETE, etc.
             headers: {
                 "Content-Type": "application/json",
-                "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwYzU0OGEyNzZkNTM0NmYxNTFlNDQyIn0sImlhdCI6MTY3ODUzMDIyN30.KNG_9USbMU5UvwyKVEDj-VunPiFcGy5sLf5vvn69WqY"
+                "auth-token": localStorage.getItem('token')
             }
         });
         const json = await response.json();
@@ -31,7 +31,7 @@ const NoteState = (props) => {
             method: "POST", // *GET, POST, PUT, DELETE, etc.
             headers: {
                 "Content-Type": "application/json",
-                "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwYzU0OGEyNzZkNTM0NmYxNTFlNDQyIn0sImlhdCI6MTY3ODUzMDIyN30.KNG_9USbMU5UvwyKVEDj-VunPiFcGy5sLf5vvn69WqY"
+                "auth-token": localStorage.getItem('token')
             },
             body: JSON.stringify({title, description, tag}), // body data type must match "Content-Type" header
         });
@@ -53,7 +53,7 @@ const NoteState = (props) => {
             method: "DELETE", // *GET, POST, PUT, DELETE, etc.
             headers: {
                 "Content-Type": "application/json",
-                "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwYzU0OGEyNzZkNTM0NmYxNTFlNDQyIn0sImlhdCI6MTY3ODUzMDIyN30.KNG_9USbMU5UvwyKVEDj-VunPiFcGy5sLf5vvn69WqY"
+                "auth-token": localStorage.getItem('token')
             },
         });
         const json = await response.json();
@@ -67,7 +67,7 @@ const NoteState = (props) => {
             method: "PUT", // *GET, POST, PUT, DELETE, etc.
             headers: {
                 "Content-Type": "application/json",
-                "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQwYzU0OGEyNzZkNTM0NmYxNTFlNDQyIn0sImlhdCI6MTY3ODUzMDIyN30.KNG_9USbMU5UvwyKVEDj-VunPiFcGy5sLf5vvn69WqY"
+                "auth-token": localStorage.getItem('token')
             },
             redirect: "follow", // manual, *follow, error
             referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
