@@ -20,22 +20,25 @@ const AddNote = (props) => {
     }
     return (
         <div>
-            <div className="container my-3">
+            <div className="container my-3 border rounded border-primary p-3">
                 <h2>Add a Note</h2>
                 <form className="my-3">
-                    <div className="mb-3">
+                    <div className="d-flex flex-row justify-content-between">
+                    <div className="mb-3 flex-grow-1 me-3">
                         <label htmlFor="title" className="form-label">Title</label>
                         <input type="text" className="form-control" id="title" name="title" aria-describedby="emailHelp" value={note.title} onChange={onChange}/>
-                    </div>
-                    <div className="mb-3">
-                        <label htmlFor="description" className="form-label">Description</label>
-                        <input type="text" className="form-control" id="description" name="description" value={note.description} onChange={onChange} />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="tag" className="form-label">Tag</label>
                         <input type="text" className="form-control" id="tag" name="tag" value={note.tag} onChange={onChange} />
                     </div>
-                    <button disabled={note.title.length<5 || note.description.length<5} type="submit" className="btn btn-primary" onClick={handleAddNote}>Add Note</button>
+                    </div>
+                    <div className="mb-3">
+                        <label htmlFor="description" className="form-label">Description</label>
+                        <textarea type="text" className="form-control" id="description" name="description" value={note.description} onChange={onChange} row="3"/>
+                    </div>
+                    
+                    <button disabled={note.title.length<3 || note.description.length<5} type="submit" className="btn btn-primary" onClick={handleAddNote}>Add Note</button>
                 </form>
             </div>
         </div>
