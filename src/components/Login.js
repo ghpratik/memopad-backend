@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
-
+import { Link } from 'react-router-dom';
 
 const Login = (props) => {
     const [credentials, setCredentials] = useState({ email: "", password: "" })
@@ -33,8 +33,8 @@ const Login = (props) => {
 
     return (
         <div>
-            <h2>Login to iNotebook</h2>
-            <form onSubmit={handleSubmit}>
+            <h2 className="text-primary">Login to iNotebook</h2>
+            <form onSubmit={handleSubmit} className="border border-primary rounded px-5 py-3 d-flex flex-column w-75">
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email address</label>
                     <input type="email" className="form-control" id="email" name="email" aria-describedby="emailHelp" onChange={onChange} value={credentials.email} />
@@ -44,7 +44,10 @@ const Login = (props) => {
                     <label htmlFor="password" className="form-label">Password</label>
                     <input type="password" className="form-control" name="password" id="password1" onChange={onChange} value={credentials.password} />
                 </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
+                <div className="md-3">
+                <button type="submit" className="btn btn-primary me-3 w-25">Login</button>
+                <Link to="/signup">Don't have an account?</Link>
+                </div>
             </form>
         </div>
     )
