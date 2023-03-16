@@ -39,7 +39,7 @@ const Navbar = () => {
                     <form className="d-flex" role="search">
                         <Link className="btn btn-primary mx-1" to="/login" role="button">Login</Link>
                         <Link className="btn btn-primary mx-1" to="/signup" role="button">SignUp</Link>
-                    </form>: <div><button type="button" className="btn btn-success" data-bs-toggle="popover" data-bs-title={userData.name} data-bs-content={userData.email+" Account Since: "+new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit'}).format(userData.date)}><i class="fa-regular fa-circle-user"></i> {userData.name}</button><button onClick={handleLogout} className="btn btn-danger ms-2">Logout</button></div>}
+                    </form>: <div><button type="button" className="btn btn-success" data-bs-toggle="popover" data-bs-title={userData.name} data-bs-content={userData.email+" Account Since: "+new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit'}).format(userData.date)}><i className="fa-regular fa-circle-user"></i> {userData.name}</button><button onClick={handleLogout} className="btn btn-danger ms-2">Logout</button></div>}
                 </div>
             </div>
         </nav>
