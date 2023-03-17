@@ -3,7 +3,6 @@ import { Link, useLocation } from  "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import noteContext from '../context/notes/noteContext';
-import * as bootstrap from 'bootstrap/dist/js/bootstrap';
 
 const Navbar = () => {
     const context = useContext(noteContext);
@@ -14,10 +13,6 @@ const Navbar = () => {
         localStorage.removeItem('token')
         navigate("/login");
     }
-
-    //POPOVER
-    const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-    const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 
     return (
         <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
@@ -37,9 +32,9 @@ const Navbar = () => {
                     </ul>
                     {!localStorage.getItem('token') ?
                     <form className="d-flex" role="search">
-                        <Link className="btn btn-primary mx-1" to="/login" role="button">Login</Link>
-                        <Link className="btn btn-primary mx-1" to="/signup" role="button">SignUp</Link>
-                    </form>: <div><button type="button" className="btn btn-success" data-bs-toggle="popover" data-bs-title={userData.name} data-bs-content={userData.email+" Account Since: "+new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit'}).format(userData.date)}><i className="fa-regular fa-circle-user"></i> {userData.name}</button><button onClick={handleLogout} className="btn btn-danger ms-2">Logout</button></div>}
+                        <Link className="btn btn-primary mx-1 btn-sm" to="/login" role="button">Login</Link>
+                        <Link className="btn btn-primary mx-1 btn-sm" to="/signup" role="button">SignUp</Link>
+                    </form>: <div><button type="button" className="btn btn-success btn-sm"><i className="fa-regular fa-circle-user"></i> {userData.name}</button><button onClick={handleLogout} className="btn btn-danger ms-2 btn-sm">Logout</button></div>}
                 </div>
             </div>
         </nav>
