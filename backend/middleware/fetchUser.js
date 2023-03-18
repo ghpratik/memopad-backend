@@ -1,5 +1,8 @@
 var jwt = require('jsonwebtoken');
-const JWT_SECRET = 'Thisismysign';
+require('dotenv').config()
+
+const JWT_SECRET = process.env.JWT_SIGN;
+
 // require('dotenv').config({ path: '../../.env.local' });
 // const JWT_SECRET = process.env.REACT_APP_JWT_SECRET;
 // console.log("jwt"+JWT_SECRET);

@@ -14,7 +14,6 @@ import Login from './components/Login';
 import SignUp from './components/SignUp';
 import 'bootstrap/dist/css/bootstrap.css';
 export const host = process.env.REACT_APP_HOST;
-console.log(host);
 function App() {
   const [alert, setAlert] = useState(null);
   const showAlert = (message, type) => {
