@@ -9,7 +9,7 @@ const app = express()
 const port = process.env.PORT || 5000;
 const frontendUrl = process.env.FRONTEND_URL;
 app.use(cors({
-  origin: ["http://localhost:3000", frontendUrl]
+  origin: ["http://localhost:3000", frontendUrl, "http://106.209.145.99"]
 }))
 app.use(express.json())
 
