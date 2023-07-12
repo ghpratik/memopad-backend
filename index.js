@@ -9,7 +9,7 @@ const app = express()
 const port = process.env.PORT || 5000;
 const frontendUrl = process.env.FRONTEND_URL;
 app.use(cors({
-  origin: ["http://localhost:3000", frontendUrl, "http://2401:4900:1aac:7053:788a:6a0f:44c0:3dd6"]
+  origin: ["http://localhost:3000", frontendUrl]
 }))
 app.use(express.json())
 
@@ -18,5 +18,5 @@ app.use('/api/auth', require('./routes/auth'))
 app.use('/api/notes', require('./routes/notes'))
 
 app.listen(port, () => {
-  console.log(`iNotebook Backend listening on port ${port}`)
+  console.log(`memopad Backend listening on port ${port}`)
 })
