@@ -29,11 +29,11 @@ async function sendMail(email, name, otp) {
         })
 
         const mailOptions = {
-            from: 'iNotebook <inotebookofficial@gmail.com>',
+            from: 'memopad <memopadofficial@gmail.com>',
             to: `${email}`,
-            subject: "iNotebook - Signed Up",
-            text: `Hi ${name}, Enter Below One Time Password to verify your E-mail. Login to iNotebook with this E-mail and Save your notes in cloud`,
-            html: `<h1>Hi ${name},</h1><h2>Enter Below One Time Password to verify your E-mail.</h2><h2>One Time Password: ${otp}</h2><p>Secure your notes in cloud.</p>`
+            subject: "memopad - Signed Up",
+            text: `Hi ${name}, Enter Below One Time Password to verify your E-mail. Login to memopad with this E-mail and Save your notes in cloud`,
+            html: `<h1>Hi ${name},</h1><h2>Enter Below One Time Password to verify your E-mail.</h2><h2>One Time Password: ${otp}</h2><h3>and start Securing your notes in cloud.</h3>`
         }
 
         const result = await transport.sendMail(mailOptions)
