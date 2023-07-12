@@ -20,7 +20,7 @@ async function sendMail(email, name, otp) {
             service: 'gmail',
             auth: {
                 type: 'OAuth2',
-                user: 'inotebookofficial@gmail.com',
+                user: 'memopadofficial@gmail.com',
                 clientId: CLIENT_ID,
                 clientSecret: CLIENT_SECRET,
                 refreshToken: REFRESH_TOKEN,
